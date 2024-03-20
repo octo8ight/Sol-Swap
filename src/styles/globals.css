@@ -1,0 +1,106 @@
+@tailwind components;
+@tailwind utilities;
+
+#jupiter-terminal * {
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+#jupiter-terminal *:focus {
+  outline: none;
+}
+
+/* JupButton border gradient */
+#jupiter-terminal .jup-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  padding: 2px;
+  background: linear-gradient(91.26deg, #fcc00a 15.73%, #4ebae9 83.27%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: source-out;
+}
+
+.hideScrollbar {
+  -ms-overflow-style: none;
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hideScrollbar::-moz-scrollbar {
+  display: none;
+}
+
+/* Custom scroll bar */
+.webkit-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.webkit-scrollbar::-webkit-scrollbar-thumb {
+  margin: 2px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #979797;
+}
+
+#jupiter-terminal .jup-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  padding: 2px;
+  background: linear-gradient(91.26deg, #fcc00a 15.73%, #4ebae9 83.27%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: source-out;
+}
+
+
+/* JupButton border gradient */
+#jupiter-terminal .v2-border-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1px;
+  background: linear-gradient(91.26deg, rgba(250, 196, 58, 0.5) 15.73%, rgba(113, 229, 237, 0.5) 83.27%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: source-out;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#jupiter-terminal .v2-border-gradient-left.v2-border-gradient::before {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+#jupiter-terminal .v2-border-gradient-center.v2-border-gradient::before {
+  border-radius: 0.75rem;
+}
+#jupiter-terminal .v2-border-gradient-right.v2-border-gradient::before {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+  /* Add tooltip functionality */
+.jupiter-tooltip {
+  @apply invisible absolute;
+  @apply bg-black text-white p-2 rounded-lg;
+}
+
+.jupiter-has-tooltip:hover .jupiter-tooltip {
+  @apply visible z-50;
+}
